@@ -3,6 +3,16 @@
     {
       "id": "1",
       "name": "Keanu Reeves"
+    },
+    {
+      "id": "b6b1376e-2359-413c-aadf-fdc55290f821",
+      "input": {
+        "name": "Teste"
+      }
+    },
+    {
+      "id": "63da7a70-6a5a-4a84-a463-d30f40dba98c",
+      "name": "Teste"
     }
   ],
   "movie": [
@@ -13,12 +23,13 @@
       "genre": "Action",
       "country": "EUA",
       "language": "English",
-      "actor": "1"
+      "actor": "1",
+      "money": 39.9
     }
   ],
   "awards": [
     {
-      "id_movie": "036a9e14-51da-4a92-af67-6bc4ec938495",
+      "idMovie": "036a9e14-51da-4a92-af67-6bc4ec938495",
       "oscar": 3
     }
   ]
