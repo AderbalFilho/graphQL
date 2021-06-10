@@ -25,7 +25,7 @@ const typeDefs = gql`
 
   type Query {
     movies: [Movie]
-    getMovie(name: String, language: String, money: Float): [Movie]
+    getMovie(id: ID, name: String, language: String, money: Float): [Movie]
     getAwards(id: ID): Awards
     users: [User]
     getUserByName(name: String): [User]
@@ -36,8 +36,30 @@ const typeDefs = gql`
     name: String!
   }
 
+  enum Genre {
+    ACTION,
+    ADVENTURE,
+    DRAMA,
+    COMEDY
+  }
+
+  enum Language {
+    PORTUGUESE,
+    ENGLISH,
+    SPANISH
+  }
+
+  input movieInput {
+    name: String
+    genre: Genre
+    country: String
+    language: Language
+    money: Float
+  }
+
   type Mutation {
     createUser(data: userInput): User
+    createMovie(data: movieInput): Movie
   }
 `
 

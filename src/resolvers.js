@@ -20,6 +20,7 @@ module.exports = {
     getUserByName: (_, args) => models.User.findOne(args)
   },
   Mutation: {
-    createUser: (_, { data }) => models.User.create(data)
+    createUser: (_, { data }) => models.User.create(data),
+    createMovie: (_, { data }) => models.Movie.create(data)
   }
 }

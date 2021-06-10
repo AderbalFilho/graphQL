@@ -25,6 +25,15 @@
       "language": "English",
       "actor": "1",
       "money": 39.9
+    },
+    {
+      "id": "eaeb2174-0b90-4956-880d-f0c6fd3abbab",
+      "createdAt": 1623242621113,
+      "name": "Madagascar",
+      "genre": "COMEDY",
+      "country": "EUA",
+      "language": "PORTUGUESE",
+      "money": 19.9
     }
   ],
   "awards": [
