@@ -11,6 +11,7 @@ const typeDefs = gql`
     country: String
     language: String
     money: Float
+    actor: ID
   }
 
   type User {
@@ -25,7 +26,7 @@ const typeDefs = gql`
 
   type Query {
     movies: [Movie]
-    getMovie(id: ID, name: String, language: String, money: Float): [Movie]
+    getMovie(id: ID, name: String, language: String, money: Float, actor: String): [Movie]
     getAwards(id: ID): Awards
     users: [User]
     getUserByName(name: String): [User]
@@ -55,6 +56,7 @@ const typeDefs = gql`
     country: String
     language: Language
     money: Float
+    actor: String
   }
 
   type Mutation {

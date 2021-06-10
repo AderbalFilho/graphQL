@@ -13,6 +13,10 @@
     {
       "id": "63da7a70-6a5a-4a84-a463-d30f40dba98c",
       "name": "Teste"
+    },
+    {
+      "id": "23fe379a-2c4a-484e-a65a-79bd8c6265ba",
+      "name": "Will Smith"
     }
   ],
   "movie": [
@@ -34,6 +38,16 @@
       "country": "EUA",
       "language": "PORTUGUESE",
       "money": 19.9
+    },
+    {
+      "id": "ed1d7b87-177e-4723-8cf2-e2aa76f61c6a",
+      "createdAt": 1623328920964,
+      "name": "Madagascar",
+      "genre": "COMEDY",
+      "country": "EUA",
+      "language": "PORTUGUESE",
+      "money": 19.9,
+      "actor": "23fe379a-2c4a-484e-a65a-79bd8c6265ba"
     }
   ],
   "awards": [

@@ -3,7 +3,20 @@ const { models } = require('./db');
 module.exports = {
   Query: {
     movies: () => models.Movie.findAll(),
-    getMovie: (_, args) => models.Movie.findOne(args),
+    getMovie: (_, args) => {
+      let actor;
+
+      if (args.actor) {
+        actor = models.User.findOne({ name: args.actor })[0];
+        args.actor = actor.id;
+      }
+
+      const movie = models.Movie.findOne(args);
+      actor = models.User.findOne({ id: movie[0].actor })[0];
+
+      movie[0].actor = actor.name;
+      return movie;
+    },
     getAwards: (_, args) => {
       let result = models.Movie.findAwards(args);
 
