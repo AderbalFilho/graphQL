@@ -14,6 +14,17 @@ const typeDefs = gql`
     actor: ID
   }
 
+  type MovieWithMoneyString {
+    id: ID
+    createdAt: Timestamp
+    name: String
+    genre: String
+    country: String
+    language: String
+    money: String
+    actor: ID
+  }
+
   type User {
     id: ID!
     name: String
@@ -25,8 +36,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    movies: [Movie]
-    getMovie(id: ID, name: String, language: String, money: Float, actor: String): [Movie]
+    movies: [MovieWithMoneyString]
+    getMovie(id: ID, name: String, language: String, money: Float, actor: String): [MovieWithMoneyString]
     getAwards(id: ID): Awards
     users: [User]
     getUserByName(name: String): [User]

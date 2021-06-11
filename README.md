@@ -57,7 +57,7 @@ Há um banco de dados em JSON para facilitar o aprendizado com menos instalaçõ
 
 ### Desafio 4
 + Mude o retorno dos filmes que sejam do tipo language para language: "Português" através dos resolvers
-+ Mude o retorno dos filmes que sejam do tipo money para money: 9999
++ Mude o retorno dos filmes que sejam do tipo money para money: R$ 9.999,00
 
 ## DONE!
 

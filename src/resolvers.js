@@ -2,7 +2,37 @@ const { models } = require('./db');
 
 module.exports = {
   Query: {
-    movies: () => models.Movie.findAll(),
+    movies: () => {
+      let movies = models.Movie.findAll();
+
+      movies = movies.map((movie) => {
+        if (movie.language) {
+          switch(movie.language.toUpperCase()) {
+            case "PORTUGUESE":
+              movie.language = "Português";
+              break;
+            case "ENGLISH":
+              movie.language = "Inglês";
+              break;
+            case "SPANISH":
+              movie.language = "Espanhol";
+              break;
+          }
+        }
+
+        if (movie.money) {
+          movie.money = movie.money.toLocaleString('pt-br', {
+            minimumFractionDigits: 2,
+            style: 'currency',
+            currency: 'BRL'
+          });
+        }
+
+        return movie;
+      });
+
+      return movies;
+    },
     getMovie: (_, args) => {
       let actor;
 
@@ -15,6 +45,29 @@ module.exports = {
       actor = models.User.findOne({ id: movie[0].actor })[0];
 
       movie[0].actor = actor.name;
+
+      if (movie[0].language) {
+        switch(movie[0].language.toUpperCase()) {
+          case "PORTUGUESE":
+            movie[0].language = "Português";
+            break;
+          case "ENGLISH":
+            movie[0].language = "Inglês";
+            break;
+          case "SPANISH":
+            movie[0].language = "Espanhol";
+            break;
+        }
+      }
+
+      if (movie[0].money) {
+        movie[0].money = movie[0].money.toLocaleString('pt-br', {
+          minimumFractionDigits: 2,
+          style: 'currency',
+          currency: 'BRL'
+        });
+      }
+
       return movie;
     },
     getAwards: (_, args) => {
